@@ -1,9 +1,7 @@
-// Hooks / Packages
 export * from "./formConfig";
 export * from "./formUtils";
 import * as Yup from "yup";
 
-// Utils
 import { createFormConfig } from "./formUtils";
 
 export const signUpFormConfig = createFormConfig({
@@ -17,12 +15,31 @@ export const signUpFormConfig = createFormConfig({
     validation: Yup.number().required("Age is required"),
     inputProps: { type: "number", label: "Age" },
   },
+
+  gender: {
+    initialValue: "",
+    validation: Yup.string().required("Gender is required"),
+    inputProps: {
+      label: "Gender",
+      type: "select",
+      data: [
+        { value: "Male", label: "Male" },
+        { value: "Female", label: "Female" },
+        { value: "Non-Binary", label: "Non-Binary" },
+      ],
+    },
+  },
   email: {
     initialValue: "",
     validation: Yup.string()
       .email("Invalid Email")
       .required("Email is required"),
     inputProps: { type: "email", label: "Email" },
+  },
+  dateOfBirth: {
+    initialValue: "",
+    validation: Yup.string().required("Date of Birth is required"),
+    inputProps: { type: "date", label: "Date of Birth" },
   },
   password: {
     initialValue: "",
@@ -37,11 +54,6 @@ export const signUpFormConfig = createFormConfig({
       .oneOf([Yup.ref("password")], "Passwords must match")
       .required("You must confirm the password"),
     inputProps: { type: "password", label: "Password Confirm" },
-  },
-  dateOfBirth: {
-    initialValue: "",
-    validation: Yup.string().required("Date of Birth is required"),
-    inputProps: { type: "date", label: "Date of Birth" },
   },
   description: {
     initialValue: "",

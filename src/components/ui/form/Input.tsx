@@ -1,35 +1,13 @@
 "use client";
 
 // Hooks / Packages
-import React, { HTMLInputTypeAttribute } from "react";
-import { Field, ErrorMessage, useFormikContext } from "formik";
+import React from "react";
+import { Field, ErrorMessage, useFormikContext, FieldProps } from "formik";
 
 // Utils
 import { cn } from "@/lib/utils";
-
-type CustomInputTypeAttribute = "textarea" | HTMLInputTypeAttribute;
-
-/**
- * InputProps interface
- *
- * This interface defines the props for the Input component.
- * It extends the React.InputHTMLAttributes<HTMLInputElement> interface
- * to include all the props that an <input> element can accept.
- *
- * @interface
- * @property {string} name - The name of the input field.
- * @property {string} label - The label for the input field.
- * @property {CustomInputTypeAttribute} type - The type of the input field.
- * @property {string} className - The class name for the input field.
- * @property {boolean} disabled - Whether the input field is disabled.
- */
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  name: string;
-  label?: string;
-  type?: CustomInputTypeAttribute;
-}
-
+import { InputProps } from "@/lib/forms";
+import SelectInput from "./SelectInput";
 
 /**
  * Input component
@@ -44,13 +22,14 @@ export interface InputProps
  * @param {string} props.name - The name of the input field.
  * @param {string} props.label - The label for the input field.
  * @param {boolean} props.disabled - Whether the input field is disabled.
+ * @param {Array} props.data - An array of objects for field options
  * @param {React.Ref<HTMLInputElement>} ref - The ref for the input field.
  * @returns {JSX.Element} - The rendered input component.
  */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, name, label, disabled, ...props }, ref) => {
+  ({ className, type, name, label, disabled, data, ...props }, ref) => {
     const { isSubmitting } = useFormikContext();
-    console.log(className);
+
     const inputType = type === "textarea" ? { as: type } : { type: type };
 
     return (
@@ -67,7 +46,24 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           disabled={isSubmitting || disabled}
           ref={ref}
           {...props}
-        ></Field>
+        >
+          {["select"].includes(type)
+            ? ({ field, form, meta }: FieldProps) => {
+                switch (type) {
+                  case "select":
+                    return (
+                      <SelectInput
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        data={data || []}
+                        defaultValue={field.value || ""}
+                      />
+                    );
+                }
+              }
+            : null}
+        </Field>
         <ErrorMessage
           name={name}
           component={"small"}

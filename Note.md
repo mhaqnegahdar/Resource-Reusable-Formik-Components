@@ -29,7 +29,7 @@ To maintain consistensy all over the project, We are going to have a single obje
 
 ### **2.4: Create the Input**
 
-Add the [Input.tsx](./src/components/ui/inputs/input.tsx). With all the styling and props it needs.
+Add the [Input.tsx](./src/components/ui/inputs/Input.tsx). With all the styling and props it needs.
 
 ### **2.3: Form Configuration**
 
@@ -44,3 +44,16 @@ Now, you can create a form configuration for any form by defining the fields and
  const inputType = type === "textarea" ? { as: type } : { type: type };
 
 ```
+## **4. [Modify Input component to Add Select Field]**
+
+### **4.1: Add Select Component**
+```
+bunx --bun shadcn@latest add select
+
+```
+### **4.2: Create SelectInput**
+Add the [SelectInput.tsx](./src/components/ui/inputs/SelectInput.tsx). 
+
+### **4.2: Modify Input component to work with Select input typ**
+Modify Input component to work with Textarea input typ
+

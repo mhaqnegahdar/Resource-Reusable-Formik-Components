@@ -2,8 +2,25 @@
 import * as Yup from "yup";
 
 // Types
-import { FormikConfig } from "formik";
-import { InputProps } from "@/components/ui/form/Input";
+import { FieldProps, FormikConfig } from "formik";
+import { HTMLInputTypeAttribute } from "react";
+
+type CustomInputTypeAttribute = "textarea" | HTMLInputTypeAttribute;
+
+export interface InputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {
+  name: string;
+  label?: string;
+  type: CustomInputTypeAttribute;
+  className?: string;
+  disabled?: boolean;
+
+  data?: Array<{ value: string; label: string }>;
+}
+export interface SelectInputProps extends FieldProps {
+  data: Array<{ value: string; label: string }>;
+  defaultValue: string;
+}
 
 export type FormFieldConfig<T> = {
   [K in keyof T]: {
