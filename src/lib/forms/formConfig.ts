@@ -1,5 +1,9 @@
+// Hooks / Packages
 import * as Yup from "yup";
-import { InputProps } from "@/components/ui/inputs/input";
+
+// Types
+import { FormikConfig } from "formik";
+import { InputProps } from "@/components/ui/form/Input";
 
 export type FormFieldConfig<T> = {
   [K in keyof T]: {
@@ -14,3 +18,5 @@ export type FormConfig<T extends Yup.AnyObject> = {
   validationSchema: Yup.ObjectSchema<T>;
   fields: FormFieldConfig<T>;
 };
+
+export type FormSubmitType<T> = FormikConfig<T>["onSubmit"];

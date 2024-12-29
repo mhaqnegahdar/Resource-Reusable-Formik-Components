@@ -33,7 +33,7 @@ const links: { title: string; href: string }[] = [
   },
 ];
 
-export function Header() {
+export default function Header() {
   return (
     <header className="flex items-center justify-between p-4 border border-b">
       <Image src={"/Logo.png"} width={50} height={50} alt="Logo" />

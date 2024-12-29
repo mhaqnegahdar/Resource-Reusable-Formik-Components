@@ -1,8 +1,11 @@
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+// Hooks / Packages
 import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+
+// Utils
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function Footer() {
   return (

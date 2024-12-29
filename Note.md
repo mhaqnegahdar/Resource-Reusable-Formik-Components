@@ -37,3 +37,10 @@ Define a reusable form configuration object [formConfig.ts](./src/lib/forms/form
 
 Now, you can create a form configuration for any form by defining the fields and their properties.
 [index.ts](./src/lib/forms/index.ts).
+
+## **3. [Modify Input component to work with Textarea input type]**
+
+```
+ const inputType = type === "textarea" ? { as: type } : { type: type };
+
+```
