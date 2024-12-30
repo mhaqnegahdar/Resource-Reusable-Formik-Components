@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { InputProps } from "@/lib/forms";
 import SelectInput from "./SelectInput";
 import RadioInput from "./RadioInput";
+import CheckBoxInput from "./CheckBoxInput";
 
 /**
  * Input component
@@ -28,14 +29,19 @@ import RadioInput from "./RadioInput";
  * @returns {JSX.Element} - The rendered input component.
  */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, name, label, disabled, data, ...props }, ref) => {
+  (
+    { className, type, name, label, disabled, data, description, ...props },
+    ref
+  ) => {
     const { isSubmitting } = useFormikContext();
 
     const inputType = type === "textarea" ? { as: type } : { type: type };
 
     return (
       <div className="mb-4">
-        {label ? <label className="font-medium ">{label}</label> : null}
+        {label && type != "checkbox" ? (
+          <label className="font-medium ">{label}</label>
+        ) : null}
         <Field
           {...inputType}
           name={name}
@@ -48,8 +54,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         >
-          {["select", "radio"].includes(type)
+          {["select", "radio", "checkbox"].includes(type)
             ? ({ field, form, meta }: FieldProps) => {
+
                 switch (type) {
                   case "select":
                     return (
@@ -71,6 +78,18 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         data={data || []}
                         defaultValue={form.values[name] || ""}
                         className="grid-cols-3 mt-4"
+                      />
+                    );
+                  case "checkbox":
+                    return (
+                      <CheckBoxInput
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        className="grid-cols-3 mt-4"
+                        defaultValue={form.values[name] || ""}
+                        label={label || ""}
+                        description={description}
                       />
                     );
                 }

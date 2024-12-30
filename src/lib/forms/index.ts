@@ -78,4 +78,13 @@ export const signUpFormConfig = createFormConfig({
       type: "textarea",
     },
   },
+  desclaimer: {
+    initialValue: false,
+    validation:Yup.bool().oneOf([true], "You must accept the disclaimer"), 
+    inputProps: {
+      label: "Disclaimer",
+      type: "checkbox",
+      description:"I confirm that I have read and accept the terms & conditions"
+    },
+  },
 });

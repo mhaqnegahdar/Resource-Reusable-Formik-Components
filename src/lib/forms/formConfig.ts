@@ -16,12 +16,22 @@ export interface InputProps
   disabled?: boolean;
 
   data?: Array<{ value: string; label: string }>;
+
+  description?:string
 }
 
 export interface SelectInputProps extends FieldProps {
   data: Array<{ value: string; label: string }>;
   defaultValue: string;
   className?: string;
+
+}
+export interface CheckBoxProps extends FieldProps {
+  defaultValue: string;
+  className?: string;
+  label:string,
+  description?:string
+
 }
 
 export type FormFieldConfig<T> = {

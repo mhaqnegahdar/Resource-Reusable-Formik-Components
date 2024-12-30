@@ -58,9 +58,9 @@ bunx --bun shadcn@latest add select
 
 Add the [SelectInput.tsx](./src/components/ui/inputs/SelectInput.tsx).
 
-## **5. [Modify Input component to Add Radio Field Field]**
+## **5. [Modify Input component to Add Radio Field ]**
 
-### **5.1: Add Select and Labrl Component**
+### **5.1: Add Select and Label Components**
 
 ```
 bunx --bun shadcn@latest add label
@@ -74,3 +74,16 @@ bunx --bun shadcn@latest add radio-group
 ### **5.2: Create RadioInput**
 
 Add the [RadioInput.tsx](./src/components/ui/inputs/RadioInput.tsx).
+
+## **6. [Modify Input component to Add Checkbox Field]**
+
+### **6.1: Add Checkbox Component**
+
+```
+bunx --bun shadcn@latest add checkbox
+
+```
+
+### **6.2: Create CheckBoxInput**
+
+Add the [CheckBoxInput.tsx](./src/components/ui/inputs/CheckBoxInput.tsx).

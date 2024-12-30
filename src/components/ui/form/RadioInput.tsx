@@ -17,7 +17,7 @@ function RadioInput({
 }: SelectInputProps) {
   const { setFieldValue } = form;
 
-  {console.log(defaultValue)}
+
   return (
     <RadioGroup
       onValueChange={(value) => setFieldValue(field.name, value)}
