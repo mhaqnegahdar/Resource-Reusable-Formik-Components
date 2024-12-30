@@ -8,6 +8,7 @@ import { Field, ErrorMessage, useFormikContext, FieldProps } from "formik";
 import { cn } from "@/lib/utils";
 import { InputProps } from "@/lib/forms";
 import SelectInput from "./SelectInput";
+import RadioInput from "./RadioInput";
 
 /**
  * Input component
@@ -47,7 +48,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         >
-          {["select"].includes(type)
+          {["select", "radio"].includes(type)
             ? ({ field, form, meta }: FieldProps) => {
                 switch (type) {
                   case "select":
@@ -58,6 +59,18 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         meta={meta}
                         data={data || []}
                         defaultValue={field.value || ""}
+                        className=""
+                      />
+                    );
+                  case "radio":
+                    return (
+                      <RadioInput
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        data={data || []}
+                        defaultValue={form.values[name] || ""}
+                        className="grid-cols-3 mt-4"
                       />
                     );
                 }

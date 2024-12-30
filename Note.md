@@ -44,16 +44,33 @@ Now, you can create a form configuration for any form by defining the fields and
  const inputType = type === "textarea" ? { as: type } : { type: type };
 
 ```
+
 ## **4. [Modify Input component to Add Select Field]**
 
 ### **4.1: Add Select Component**
+
 ```
 bunx --bun shadcn@latest add select
 
 ```
+
 ### **4.2: Create SelectInput**
-Add the [SelectInput.tsx](./src/components/ui/inputs/SelectInput.tsx). 
 
-### **4.2: Modify Input component to work with Select input typ**
-Modify Input component to work with Textarea input typ
+Add the [SelectInput.tsx](./src/components/ui/inputs/SelectInput.tsx).
 
+## **5. [Modify Input component to Add Radio Field Field]**
+
+### **5.1: Add Select and Labrl Component**
+
+```
+bunx --bun shadcn@latest add label
+
+bunx --bun shadcn@latest add radio-group
+
+
+
+```
+
+### **5.2: Create RadioInput**
+
+Add the [RadioInput.tsx](./src/components/ui/inputs/RadioInput.tsx).

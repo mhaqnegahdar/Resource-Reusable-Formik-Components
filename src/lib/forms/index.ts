@@ -29,12 +29,27 @@ export const signUpFormConfig = createFormConfig({
       ],
     },
   },
+
   email: {
     initialValue: "",
     validation: Yup.string()
       .email("Invalid Email")
       .required("Email is required"),
     inputProps: { type: "email", label: "Email" },
+  },
+  communication: {
+    initialValue: "Email",
+    validation: Yup.string().required("Communication method is required"),
+    inputProps: {
+      label: "Communication Method",
+      type: "radio",
+      className: "grid-cols-3",
+      data: [
+        { value: "Email", label: "Email" },
+        { value: "SMS", label: "SMS" },
+        { value: "Both", label: "Both" },
+      ],
+    },
   },
   dateOfBirth: {
     initialValue: "",

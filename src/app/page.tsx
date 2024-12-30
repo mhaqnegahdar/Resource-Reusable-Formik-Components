@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen py-8">
-      <section className="max-w-2xl w-full mx-auto">
+      <section className="max-w-2xl w-full mx-auto px-4">
         <h1 className="mb-6 text-2xl md:text-3xl lg:text-4xl font-bold">
           {" "}
           SignUp Form

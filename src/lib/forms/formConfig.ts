@@ -17,9 +17,11 @@ export interface InputProps
 
   data?: Array<{ value: string; label: string }>;
 }
+
 export interface SelectInputProps extends FieldProps {
   data: Array<{ value: string; label: string }>;
   defaultValue: string;
+  className?: string;
 }
 
 export type FormFieldConfig<T> = {
