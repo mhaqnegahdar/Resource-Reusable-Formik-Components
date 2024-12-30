@@ -29,6 +29,19 @@ export const signUpFormConfig = createFormConfig({
       ],
     },
   },
+  degre: {
+    initialValue: "",
+    validation: Yup.string().required("Gender is required"),
+    inputProps: {
+      label: "Degre",
+      type: "combobox",
+      data: [
+        { value: "Male", label: "Male" },
+        { value: "Female", label: "Female" },
+        { value: "Non-Binary", label: "Non-Binary" },
+      ],
+    },
+  },
 
   email: {
     initialValue: "",

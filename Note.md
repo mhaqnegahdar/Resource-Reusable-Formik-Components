@@ -87,3 +87,20 @@ bunx --bun shadcn@latest add checkbox
 ### **6.2: Create CheckBoxInput**
 
 Add the [CheckBoxInput.tsx](./src/components/ui/inputs/CheckBoxInput.tsx).
+
+
+## **6. [Add ComboBox Field]**
+
+### **6.1: Add Preliminary Component**
+
+```
+bunx --bun shadcn@latest add command
+
+bunx --bun shadcn@latest add popover
+
+
+```
+
+### **6.2: Create ComboBoxInput**
+
+Add the [ComboBoxInput.tsx](./src/components/ui/inputs/ComboboxInput.tsx).

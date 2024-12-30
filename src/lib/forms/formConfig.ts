@@ -5,7 +5,10 @@ import * as Yup from "yup";
 import { FieldProps, FormikConfig } from "formik";
 import { HTMLInputTypeAttribute } from "react";
 
-type CustomInputTypeAttribute = "textarea" | HTMLInputTypeAttribute;
+type CustomInputTypeAttribute =
+  | "textarea"
+  | "combobox"
+  | HTMLInputTypeAttribute;
 
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {
@@ -17,21 +20,19 @@ export interface InputProps
 
   data?: Array<{ value: string; label: string }>;
 
-  description?:string
+  description?: string;
 }
 
 export interface SelectInputProps extends FieldProps {
   data: Array<{ value: string; label: string }>;
   defaultValue: string;
   className?: string;
-
 }
 export interface CheckBoxProps extends FieldProps {
   defaultValue: string;
   className?: string;
-  label:string,
-  description?:string
-
+  label: string;
+  description?: string;
 }
 
 export type FormFieldConfig<T> = {
