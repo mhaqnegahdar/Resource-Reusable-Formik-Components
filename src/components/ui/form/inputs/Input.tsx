@@ -5,10 +5,12 @@ import React from "react";
 import { Field, ErrorMessage, useFormikContext, FieldProps } from "formik";
 
 // Components
-import SelectInput from "@/components/ui/form/SelectInput";
-import RadioInput from "@/components/ui/form/RadioInput";
-import CheckBoxInput from "@/components/ui/form/CheckBoxInput";
-import ComboboxInput from "@/components/ui/form/ComboboxInput";
+import SelectInput from "@/components/ui/form/inputs/SelectInput";
+import RadioInput from "@/components/ui/form/inputs/RadioInput";
+import CheckBoxInput from "@/components/ui/form/inputs/CheckBoxInput";
+import ComboboxInput from "@/components/ui/form/inputs/ComboboxInput";
+import DatepickerInput from "@/components/ui/form/inputs/DatePickerInput";
+
 
 // Utils
 import { cn } from "@/lib/utils";
@@ -57,7 +59,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         >
-          {["select", "radio", "checkbox", "combobox"].includes(type)
+          {["select", "radio", "checkbox", "combobox", "date"].includes(type)
             ? ({ field, form, meta }: FieldProps) => {
                 switch (type) {
                   case "select":
@@ -104,6 +106,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         defaultValue={form.values[name] || ""}
                         data={data || []}
                       />
+                    );
+                  case "date":
+                    return (
+                      <DatepickerInput field={field} form={form} meta={meta} />
                     );
                 }
               }

@@ -1,12 +1,11 @@
-import { SelectInputProps } from "@/lib/forms";
+// Hooks / Packages
 import React from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../select";
+
+// Components
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
+// Types
+import { SelectInputProps } from "@/lib/forms";
 
 export default function SelectInput({
   field,
@@ -19,7 +18,7 @@ export default function SelectInput({
   return (
     <Select
       {...field}
-      onValueChange={(value) => setFieldValue(field.name, value)}
+      onValueChange={(value:unknown) => setFieldValue(field.name, value)}
       defaultValue={defaultValue?.toString()}
     >
       <SelectTrigger>

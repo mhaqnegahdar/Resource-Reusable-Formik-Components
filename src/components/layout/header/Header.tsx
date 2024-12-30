@@ -16,21 +16,10 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const links: { title: string; href: string }[] = [
   {
-    title: "Form 1",
-    href: "/form1",
+    title: "SignUp Form",
+    href: "/",
   },
-  {
-    title: "Form 2",
-    href: "/form1",
-  },
-  {
-    title: "Form 3",
-    href: "/form1",
-  },
-  {
-    title: "Form 4",
-    href: "/form1",
-  },
+ 
 ];
 
 export default function Header() {

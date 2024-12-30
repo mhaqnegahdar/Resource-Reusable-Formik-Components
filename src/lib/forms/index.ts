@@ -15,7 +15,11 @@ export const signUpFormConfig = createFormConfig({
     validation: Yup.number().required("Age is required"),
     inputProps: { type: "number", label: "Age" },
   },
-
+  dateOfBirth: {
+    initialValue: "",
+    validation: Yup.string().required("Date of Birth is required"),
+    inputProps: { type: "date", label: "Date of Birth" },
+  },
   gender: {
     initialValue: "",
     validation: Yup.string().required("Gender is required"),
@@ -29,16 +33,18 @@ export const signUpFormConfig = createFormConfig({
       ],
     },
   },
-  degre: {
+  degree: {
     initialValue: "",
-    validation: Yup.string().required("Gender is required"),
+    validation: Yup.string().required("Degree is required"),
     inputProps: {
-      label: "Degre",
+      label: "Degree",
       type: "combobox",
       data: [
-        { value: "Male", label: "Male" },
-        { value: "Female", label: "Female" },
-        { value: "Non-Binary", label: "Non-Binary" },
+        { value: "High School", label: "High School" },
+        { value: "Associate's", label: "Associate's" },
+        { value: "Bachelor's", label: "Bachelor's" },
+        { value: "Master's", label: "Master's" },
+        { value: "Doctorate", label: "Doctorate" },
       ],
     },
   },
@@ -64,11 +70,7 @@ export const signUpFormConfig = createFormConfig({
       ],
     },
   },
-  dateOfBirth: {
-    initialValue: "",
-    validation: Yup.string().required("Date of Birth is required"),
-    inputProps: { type: "date", label: "Date of Birth" },
-  },
+
   password: {
     initialValue: "",
     validation: Yup.string()
@@ -91,13 +93,14 @@ export const signUpFormConfig = createFormConfig({
       type: "textarea",
     },
   },
-  desclaimer: {
+  disclaimer: {
     initialValue: false,
-    validation:Yup.bool().oneOf([true], "You must accept the disclaimer"), 
+    validation: Yup.bool().oneOf([true], "You must accept the disclaimer"),
     inputProps: {
       label: "Disclaimer",
       type: "checkbox",
-      description:"I confirm that I have read and accept the terms & conditions"
+      description:
+        "I confirm that I have read and accept the terms & conditions",
     },
   },
 });

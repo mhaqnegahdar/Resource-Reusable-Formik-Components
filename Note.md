@@ -104,3 +104,16 @@ bunx --bun shadcn@latest add popover
 ### **6.2: Create ComboBoxInput**
 
 Add the [ComboBoxInput.tsx](./src/components/ui/inputs/ComboboxInput.tsx).
+
+## **7. [Add Datepicker Field]**
+
+### **7.1: Add Preliminary Component**
+
+```
+bunx --bun shadcn@latest add calendar
+
+```
+
+### **7.2: Create DatepickerInput**
+
+Add the [DatepickerInput.tsx](./src/components/ui/inputs/DatepickerInput.tsx).

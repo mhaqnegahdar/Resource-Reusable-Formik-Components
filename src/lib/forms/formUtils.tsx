@@ -2,7 +2,7 @@
 import * as Yup from "yup";
 
 // Components
-import { Input } from "@/components/ui/form/Input";
+import { Input } from "@/components/ui/form/inputs/Input";
 
 // Types
 import { FormConfig, FormFieldConfig } from "./formConfig";
@@ -44,15 +44,9 @@ export const submitFormData = async (values: FormikValues) => {
   // Simulate sending data to the server
   console.log("Form data:", values);
   // Replace with actual API call
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      // Simulate success or failure
-      const success = Math.random() > 0.5;
-      if (success) {
-        resolve("Form data sent successfully");
-      } else {
-        reject(new Error("Failed to send form data"));
-      }
+      resolve("Form data sent successfully");
     }, 1000);
   });
 };
