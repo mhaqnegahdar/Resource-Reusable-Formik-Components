@@ -16,7 +16,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const links: { title: string; href: string }[] = [
   {
-    title: "SignUp Form",
+    title: "Sign Up",
     href: "/",
   },
  

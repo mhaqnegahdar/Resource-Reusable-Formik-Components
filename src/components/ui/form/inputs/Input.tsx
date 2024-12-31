@@ -7,14 +7,14 @@ import { Field, ErrorMessage, useFormikContext, FieldProps } from "formik";
 // Components
 import SelectInput from "@/components/ui/form/inputs/SelectInput";
 import RadioInput from "@/components/ui/form/inputs/RadioInput";
-import CheckBoxInput from "@/components/ui/form/inputs/CheckBoxInput";
+import CheckboxInput from "@/components/ui/form/inputs/CheckboxInput";
 import ComboboxInput from "@/components/ui/form/inputs/ComboboxInput";
 import DatepickerInput from "@/components/ui/form/inputs/DatePickerInput";
-
 
 // Utils
 import { cn } from "@/lib/utils";
 import { InputProps } from "@/lib/forms";
+import ImageInput from "./ImageInput";
 
 /**
  * Input component
@@ -30,9 +30,11 @@ import { InputProps } from "@/lib/forms";
  * @param {string} props.label - The label for the input field.
  * @param {boolean} props.disabled - Whether the input field is disabled.
  * @param {Array} props.data - An array of objects for field options
+ * @param {string} props.description - The description of the field
  * @param {React.Ref<HTMLInputElement>} ref - The ref for the input field.
  * @returns {JSX.Element} - The rendered input component.
  */
+
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     { className, type, name, label, disabled, data, description, ...props },
@@ -59,7 +61,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         >
-          {["select", "radio", "checkbox", "combobox", "date"].includes(type)
+          {[
+            "select",
+            "radio",
+            "checkbox",
+            "combobox",
+            "date",
+            "image",
+          ].includes(type)
             ? ({ field, form, meta }: FieldProps) => {
                 switch (type) {
                   case "select":
@@ -86,7 +95,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     );
                   case "checkbox":
                     return (
-                      <CheckBoxInput
+                      <CheckboxInput
                         field={field}
                         form={form}
                         meta={meta}
@@ -110,6 +119,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                   case "date":
                     return (
                       <DatepickerInput field={field} form={form} meta={meta} />
+                    );
+                  case "image":
+                    return (
+                      <ImageInput
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        disabled={disabled || isSubmitting}
+                      />
                     );
                 }
               }

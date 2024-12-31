@@ -23,11 +23,12 @@ function RadioInput({
       onValueChange={(value) => setFieldValue(field.name, value)}
       className={className}
       defaultValue={defaultValue}
+
     >
       {data?.map(({ value, label }) => (
         <div key={value} className="flex items-center space-x-2">
           <RadioGroupItem value={value} id={`${field.name}-${value}`} />
-          <Label id={`${field.name}-${value}`}>{label}</Label>
+          <Label htmlFor={`${field.name}-${value}`}>{label}</Label>
         </div>
       ))}
     </RadioGroup>

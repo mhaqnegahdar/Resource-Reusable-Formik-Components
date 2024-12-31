@@ -12,7 +12,7 @@ export const signUpFormConfig = createFormConfig({
   },
   age: {
     initialValue: 0,
-    validation: Yup.number().required("Age is required"),
+    validation: Yup.number().min(1).max(120).required("Age is required"),
     inputProps: { type: "number", label: "Age" },
   },
   dateOfBirth: {
@@ -91,6 +91,14 @@ export const signUpFormConfig = createFormConfig({
     inputProps: {
       label: "Description",
       type: "textarea",
+    },
+  },
+  profileUrl: {
+    initialValue: "",
+    validation: Yup.string().required("Profile Image is required"),
+    inputProps: {
+      label: "Profile Image",
+      type: 'image',
     },
   },
   disclaimer: {

@@ -6,9 +6,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
 // Types
-import { CheckBoxProps } from "@/lib/forms";
+import { CheckboxInputProps } from "@/lib/forms";
 
-function CheckBoxInput({ field, form, label, description }: CheckBoxProps) {
+function CheckboxInput({
+  field,
+  form,
+  label,
+  description,
+}: CheckboxInputProps) {
   const { setFieldValue } = form;
 
   return (
@@ -35,4 +40,4 @@ function CheckBoxInput({ field, form, label, description }: CheckBoxProps) {
   );
 }
 
-export default CheckBoxInput;
+export default CheckboxInput;

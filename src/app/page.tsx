@@ -46,10 +46,12 @@ export default function Home() {
   return (
     <main className="min-h-screen py-8">
       <section className="max-w-2xl w-full mx-auto px-4">
-        <h1 className="mb-6 text-2xl md:text-3xl lg:text-4xl font-bold">
-          {" "}
-          SignUp Form
-        </h1>
+        <div className="space-y-0.5 border-b border-gray-200 pb-4 mb-4">
+          <h2 className="text-2xl font-bold tracking-tight">Sign Up </h2>
+          <p className="text-muted-foreground">
+            Please fill out the form below to sign up.
+          </p>
+        </div>
         <FormContainer
           initialValues={initialValues}
           validationSchema={validationSchema}

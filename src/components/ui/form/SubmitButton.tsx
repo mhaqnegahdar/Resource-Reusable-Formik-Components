@@ -7,10 +7,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 
 function SubmitButton({ title = "Submit" }: { title?: string }) {
-  const { isSubmitting, dirty, isValid } = useFormikContext();
+  const { isSubmitting, dirty } = useFormikContext();
 
   return (
-    <Button type="submit" disabled={!isValid || !dirty || isSubmitting}>
+    <Button type="submit" disabled={!dirty || isSubmitting}>
       {title}
     </Button>
   );
