@@ -7,9 +7,9 @@ import { Field, ErrorMessage, useFormikContext, FieldProps } from "formik";
 // Components
 import SelectInput from "@/components/ui/form/inputs/SelectInput";
 import RadioInput from "@/components/ui/form/inputs/RadioInput";
-import CheckboxInput from "@/components/ui/form/inputs/CheckboxInput";
 import ComboboxInput from "@/components/ui/form/inputs/ComboboxInput";
 import DatepickerInput from "@/components/ui/form/inputs/DatePickerInput";
+import CheckboxInput from "@/components/ui/form/inputs/CheckboxInput";
 
 // Utils
 import { cn } from "@/lib/utils";
