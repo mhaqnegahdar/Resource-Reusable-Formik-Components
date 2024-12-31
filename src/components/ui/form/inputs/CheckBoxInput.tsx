@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 // Types
 import { CheckboxInputProps } from "@/lib/forms";
 
-function CheckboxInput({
+export default function CheckboxInput({
   field,
   form,
   label,
@@ -39,5 +39,3 @@ function CheckboxInput({
     </div>
   );
 }
-
-export default CheckboxInput;
