@@ -1,12 +1,13 @@
 # React Form Components - Nextjs v15.2.1
 
-This is [Next.js](https://nextjs.org/) project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). You can use this project as a refrence.It is reusable form component using **Formik**, **Yup** and **Shadcn/ui**.
+This is [Next.js](https://nextjs.org/) project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). You can use this project as a refrence and create reusable form components using **Formik**, **Yup** and **Shadcn/ui**.
 
-Explore the [demo](https://reusable-formik-components.vercel.app/) for better understanding'.
+Explore the [demo](https://reusable-formik-components.vercel.app/) and [Note.md](./Note.md) for better understanding'.
 
-I have created all types of input fields like text, email, password, radio, checkbox, select, textarea, date, time, file, range, color, number, tel, url, search, hidden, button, submit, reset, image, and more.
+It suppoerts all types of input fields like text, email, password, radio, checkbox, select, textarea, date, time, file, range, color, number, tel, url, combobox, image, and more.
 
 Also for consistency through the projects, the fields are rendered dynamically from a single object.
+
 
 ## Technologies
 
@@ -32,6 +33,13 @@ Also for consistency through the projects, the fields are rendered dynamically f
 bun install
 
 bun run dev
+```
+or
+
+```shell
+npm install
+
+npm run dev
 ```
 
 ## Screenshots
