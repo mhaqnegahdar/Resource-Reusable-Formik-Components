@@ -9,6 +9,8 @@ import { FormSubmitType } from "@/lib/forms";
 interface FormContainerProps<T extends FormikValues> extends FormikConfig<T> {
   children: React.ReactNode;
   onSubmit: FormSubmitType<T>;
+  title: string;
+  descriptin?: string;
 }
 
 /**
@@ -30,16 +32,24 @@ const FormContainer = <T extends FormikValues>({
   initialValues,
   onSubmit,
   children,
+  title,
+  descriptin,
   ...formikProps
 }: FormContainerProps<T>) => {
   return (
-    <Formik
-      {...formikProps}
-      initialValues={initialValues || {}}
-      onSubmit={onSubmit}
-    >
-      <Form>{children}</Form>
-    </Formik>
+    <>
+      <div className="space-y-0.5 border-b border-gray-200 pb-4 mb-4">
+        <h2 className="text-2xl font-bold tracking-tight">{title} </h2>
+        <p className="text-muted-foreground">{descriptin}</p>
+      </div>
+      <Formik
+        {...formikProps}
+        initialValues={initialValues || {}}
+        onSubmit={onSubmit}
+      >
+        <Form>{children}</Form>
+      </Formik>
+    </>
   );
 };
 

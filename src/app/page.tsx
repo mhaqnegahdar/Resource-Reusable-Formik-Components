@@ -46,13 +46,9 @@ export default function Home() {
   return (
     <main className="min-h-screen py-8">
       <section className="max-w-2xl w-full mx-auto px-4">
-        <div className="space-y-0.5 border-b border-gray-200 pb-4 mb-4">
-          <h2 className="text-2xl font-bold tracking-tight">Sign Up </h2>
-          <p className="text-muted-foreground">
-            Please fill out the form below to sign up.
-          </p>
-        </div>
         <FormContainer
+          title="Sign Up"
+          descriptin="Please fill out the form below to sign up."
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={onSubmit}
